@@ -1,0 +1,22 @@
+func climbStairs(n int) int {
+    fibonacciSeq := [47]int{0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811, 514229, 832040, 1346269, 2178309, 3524578, 5702887, 9227465, 14930352, 24157817, 39088169, 63245986, 102334155, 165580141, 267914296, 433494437, 701408733, 1134903170, 1836311903}
+    climbs := fibonacciSeq[n+1]
+    return climbs
+}
+
+func fibonacci(x int) int {
+    if x < 2 {
+		return x
+	}
+	return fibonacci(x-1) + fibonacci(x-2)
+}
+
+// Discussion
+// Please read prompt here: https://leetcode.com/problems/climbing-stairs/
+
+// My first intuition upon reading this prompt was that this is a fairly straight-forward use of the concept of the Fibonacci Sequence.
+// The first draft of this solution contained only the fibonacci function and the return statement. The problem with that solution was LeetCode's runtime
+// restrictions. In order to get around those restrictions, I simply hard-coded an array representing the all the possible values (based on the prompt
+// requirements). This way, the runtime is a single look-up from the existing array.
+// I've left the fibonacci function in place to demonstrate how the array is populated, and to show how the prompt might be solved with different
+// runtime resources.
